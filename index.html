@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fortis Roleplay</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="overlay" id="overlay"></div>
+        <div class="donate modal" id="modal">
+            <div class="donate-header">
+                <div class="donate-title">Донат-услуги</div>
+            </div>
+            <div class="donate-body">
+                <div class="left">
+                    <form name="payment" method="post" action="https://sci.interkassa.com/" accept-charset="UTF-8">
+                        <input type="hidden" name="ik_co_id" value="5f58a5874b0de93ad83d7a3c"/>
+                        <input type="hidden" name="ik_pm_no" value=""/>
+                        <input type="hidden" name="ik_desc" value="Donate"/>
+                        <div class="input">
+                            <label class="input-label" for="login">
+                                Введите логин
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" class="i1" name="ik_x_login" id="login" placeholder="Ваш логин" required>
+                                <div class="custom-select">
+                                    <select name="" id="">
+                                        <option value="1" selected>1</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="input i2">
+                                <label class="input-label" for="summa">
+                                    Сумма пожертвования
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="number" name="ik_am" class="i2" id="summa" placeholder="Введите сумму" onkeypress='validate(event)' required>
+                                </div>
+                            </div>
+                        <input class="donate-btn" type="submit" value="Отправить">                
+                    </form>
+                    <div class="text-error"></div>
+                </div>
+                <div class="right">
+                    <div class="right-title">Наша благодарность за Ваш донат</div>
+                    <div class="row services">
+                        <div class="block block1 vip">
+                            <div class="block-header">
+                                <div class="block-header-title"><div class="b">VIP Platinum</div> Аккаунт</div>
+                                <div class="block-header-price"><span class="b">1000 р.</span> за месяц</div>
+                            </div>
+                            <ul class="block-content">
+                                <li>Второй персонаж без достижения 20 часов;</li>
+                                <li>+20% ко всем ЗП во фракциях и на работах;</li>
+                                <li>Увеличения лимита оплаты налога дома/автомобиля/бизнеса в 2 раза;</li>
+                                <li>Время ожидания воскрешения после реанимации уменьшено;</li>
+                                <li>Возможность иметь два дома.</li>
+                            </ul>
+                        </div>
+                        <div class="block block1 vip">
+                            <div class="block-header">
+                                <div class="block-header-title"><div class="b">VIP Silver</div> Аккаунт</div>
+                                <div class="block-header-price"><span class="b">500 р.</span> за месяц</div>
+                            </div>
+                            <ul class="block-content">
+                                <li>Второй персонаж без достижения 20 часов;</li>
+                                <li>+10% ко всем ЗП во фракциях и на работах;</li>
+                                <li>Время ожидания воскрешения после реанимации уменьшено;</li>
+                            </ul>
+                        </div>
+                        <div class="blocks">
+                            <div class="block calc">
+                                <div class="block-header">
+                                    <div class="block-header-title">Калькулятор</div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="in-input-wrapper">
+                                        <input type="number" onkeypress='validate(event)' class="calc-input" id="in">
+                                    </div>
+                                    <div class="exchange-icon" id="change"></div>
+                                    <div class="out-input-wrapper">
+                                        <input type="text" readonly class="calc-input" id="out">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block num-plate">
+                                <div class="block-header">
+                                    <div class="block-header-title">Смена номера автомобиля</div>
+                                    <div class="block-header-price"><span class="b">1000 рублей</span></div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="text">8 уникальных символов, пример:</div>
+                                    <div class="example">RUTICH95</div>
+                                </div>
+                            </div>
+                            <div class="row other">
+                                <div class="block name">
+                                    <div class="block-header">
+                                        <div class="block-header-title">Смена имени</div>
+                                        <div class="block-header-price"><span class="b">30 рублей</span></div>
+                                    </div>
+                                    <div class="block-content">
+                                        <div class="text">Смена имени одного из Ваших персонажей</div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="block appearance">
+                                    <div class="block-header">
+                                        <div class="block-header-title">Смена внешности</div>
+                                        <div class="block-header-price"><span class="b">50 рублей</span></div>
+                                    </div>
+                                    <div class="block-content">
+                                        <div class="text">Смена внешности одного из Ваших персонажей</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="donate-body">
+            <div class="right-footer">При донате от 1.000р разблокируется слот для 3 персонажа.</div> 
+        </div>
+            <div class="forCaptcha"></div>
+            <div class="close" id="close"><img src="/img/close.png" alt=""></div>
+        </div>
+        <header id="header">
+            <div class="content-wrapper">
+                <div class="head">
+                    <div class="logo">
+                        <div class="logo-img"><img src="/img/logo-100px-blue.png" alt=""></div>
+                    </div>
+                    <div class="menu-btn" id="menuBtn">
+                        <div class="burger-line"></div>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu-list">
+                            <a href="#">
+                                <li class="menu-item">
+                                    Главная
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                            <a href="#howStart">
+                                <li class="menu-item">
+                                    Начать играть
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                            <a href="#" id="donate">
+                                <li class="menu-item">
+                                    Донат
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                            <a href="#aboutUs">
+                                <li class="menu-item">
+                                    О нас
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                            <a href="https://forum.fortisrp.ru/">
+                                <li class="menu-item">
+                                    Форум
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                            <a href="/contacts.html">
+                                <li class="menu-item">
+                                    Наши контакты
+                                    <div class="hover-line"></div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="fortis-img"></div>
+                </div>
+                <div class="header-main">
+                    <div class="info">
+                        <div class="title">FORTIS Role Play</div>
+                        <div class="text">Это молодой и амбициозный проект с хорошей планкой ролевой игры.</div>
+                        <div class="download-wrapper">
+                            <a href="#howStart" class="download">
+                                <div class="download-btn">Начать играть</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="monitoring">
+                        <div class="monitoring-header">
+                            <h2 class="monitoring-title">Мониторинг</h2>
+                        </div>
+                        <div class="monitoring-content">
+                            <div class="row">
+                                <div class="server-logo">1</div>
+                                <div class="server-stat">
+                                    <div class="stat-title">Игроков:</div>
+                                    <div class="stat-online-nums">0/1000</div>
+                                    <div class="stat-online-bar">
+                                        <div class="stat-online-bar-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="server-ping">
+                                    <div class="server-ping-title">Ping</div>
+                                    <div class="server-ping-num">10 ms</div>
+                                </div>
+                            </div>
+                            <div class="ip">fortis-rp.ru:22005</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="content-wrapper">
+                <div class="how-start" id="howStart">
+                    <div class="hs-btn">Как начать играть?</div>
+                    <div class="hs-title">3 Простых пункта</div>
+                    <div class="hs-items">
+                        <div class="hs-item hs-item-1">
+                            <img src="/img/drop1.png" alt="">
+                            <a target="_blank" href="https://ru.socialclub.rockstargames.com/games/gtav" class="scl">Social<br> club</a>
+                            <a target="_blank" href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" class="steam">Steam</a>
+                        </div>
+                        <a target="_blank" href="https://rage.mp/" class="hs-item hs-item-2">
+                            <img src="/img/drop2.png" alt="">
+                        </a>
+                        <div class="hs-item hs-item-3">
+                            <img src="/img/drop3.png" alt="">
+                        </div>
+                        <div class="hs-shadows">
+                            <img src="/img/drop-shadows.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-us" id="aboutUs">
+                    <div class="header">
+                        <div class="title">О нашем проекте</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="body">
+                        <div class="col col-1">
+                            <div class="video">
+                                <div class="text">Стримы</div>
+                                <div class="moto"><img src="/img/moto.png" alt=""></div>
+                                <div class="play"><img class="play-img" src="/img/play.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="about-text">
+                                Наш проект создан для того чтобы игроки могли ощутить настоящую ролевую игру без ООС информации в голосовой чат, отыгрыша визуально видных действий и прочей лабуды.
+                            </div>
+                            <div class="actions">
+                                <a href="" class="subscribe">Подписаться</a>
+                                <div class="socials">
+                                    <a href="https://www.twitch.tv/fortis_role_play"><img src="/img/twitch.png" alt=""></a>
+                                    <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg"><img src="/img/youtube.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="plane">
+            </div>
+            <div class="trevor"></div>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="our-sn">
+                    <div class="header">
+                        <div class="title">НАШИ СОЦСЕТИ</div>
+                        <div class="subtitle">Где всегда интересно</div>
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <div class="socials">
+                                <img class="chel-img" src="/img/chel.png" alt="">
+                                <div class="chekni"><img src="/img/chekni.png" alt=""></div>
+                                <a href="https://vk.com/fortisrp" class="social-link sc-1">
+                                    <div class="sc-content">
+                                        <div class="sc-text">Вконтакте</div>
+                                        <img src="/img/link.png" alt="">
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg" class="social-link sc-2">
+                                    <div class="sc-content">
+                                        <div class="sc-text">YouTube</div>
+                                        <img src="/img/link.png" alt="">
+                                    </div>
+                                </a>
+                                <a href="https://discord.gg/6C9nZDt" class="social-link sc-3">
+                                    <div class="sc-content">
+                                        <div class="sc-text">Discord</div>
+                                        <img src="/img/link.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="to-top">
+                                <a href="#header" class="to-top-btn"></a>
+                                <div class="home-link">На главную</div>
+                            </div>
+                            <a href="https://forum.fortisrp.ru/" class="forum-btn">Наш форум</a>
+                            
+                        </div>
+                        <img class="medved" src="/img/medved.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="bottom">
+            <div class="content-wrapper">
+                <div class="block">
+                    <ul class="footer-menu">
+                        <a href="https://vk.com/fortisrp">
+                            <li class="footer-menu-item">
+                                Вконтакте
+                                <div class="hover-line"></div>
+                            </li>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCXbi1k6SD4CTkQv7RYesSXg">
+                            <li class="footer-menu-item">
+                                YouTube
+                                <div class="hover-line"></div>
+                            </li>
+                        </a>
+                        <a href="https://forum.fortisrp.ru/">
+                            <li class="footer-menu-item">
+                                Форум
+                                <div class="hover-line"></div>
+                            </li>
+                        </a>
+                        <a href="https://discord.gg/6C9nZDt">
+                            <li class="footer-menu-item">
+                                Дискорд
+                                <div class="hover-line"></div>
+                            </li>
+                        </a>
+                        <a href="https://www.twitch.tv/fortis_role_play">
+                            <li class="footer-menu-item">
+                                Twitch
+                                <div class="hover-line"></div>
+                            </li>
+                        </a>
+                    </ul>
+                    <a href="policy.html" class="copyright copy">Политика конфиденциальности</a>
+                    <a href="contract.html" class="copyright copy">Пользовательское соглашение</a>
+                    <a href="https://vk.com/dedushka_rutich" class="copyright">FORTIS 2019. Все права защищены.</a>
+                    
+                </div>
+                <div class="block">
+                    <div class="logo">
+                        FORTIS RP
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script
+    
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
